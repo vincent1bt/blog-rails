@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= evil_icons_sprite %>
+    <div class="icon-bar four-up">
+      <div class="info">
+        <p class="title">My blogers</p>
+        <p class="name">Bienvenido Vicente</p>
+      </div>
+  <a class="item">
+    <%= evil_icon 'ei-search', size: :m %>
+    <label>Home</label>
+  </a>
+  <a class="item">
+    <%= evil_icon 'ei-archive', size: :m %>
+    <label>Blogs</label>
+  </a>
+  <a class="item">
+    <%= evil_icon 'ei-user', size: :m %>
+    <label>Perfil</label>
+  </a>
+  <a class="item">
+    <%= evil_icon 'ei-close', size: :m %>
+    <label>Salir</label>
+  </a>
+
+</div
+    <%= yield %>
+
+  </body>
+</html>
