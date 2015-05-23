@@ -27,6 +27,7 @@ body{
   background: rgba(255,255,255,1);
   color: black;
   font-weight: 300;
+  margin-bottom:10px;
 }
 .icon-bar a{
   font-weight: 300;
@@ -55,4 +56,156 @@ body{
   text-align:left;
   font-size:3em;
   font-weight: 700;
+}
+
+.main{
+  width:90%;
+  height:auto;
+  padding-bottom: 20px;
+  margin-top: 450px;
+  margin: 0 auto;
+  background:white;
+  border-radius:5px;
+}
+.main_form{
+  width:80%;
+  height:auto;
+
+  padding: 25px;
+  margin-top: 450px;
+  margin: 0 auto;
+  background:white;
+  border-radius:5px;
+}
+.main_form input{
+  border-radius: 5px;
+}
+.main_form textarea{
+  border-radius: 5px;
+
+}
+
+.main_form_session{
+  width:40%;
+  min-width: 512px;
+  height:auto;
+
+  padding: 25px;
+  margin-top: 450px;
+  margin: 0 auto;
+  background:white;
+  border-radius:5px;
+}
+.main_form_session input{
+  border-radius: 5px;
+}
+.main_form_session textarea{
+  border-radius: 5px;
+
+}
+
+fieldset{
+  border-radius: 5px;
+}
+.main a:hover{
+  text-decoration: underline;
+}
+.main p{
+  margin-left: 30px;
+  padding:10px;
+  font-weight: 300;
+}
+.data{
+  margin-left:15px;
+}
+.main h3{
+  margin-left: 30px;
+  padding-top: 30px;
+
+}
+
+
+.success{
+  margin: 20px auto;
+  margin-bottom: 20px;
+  width: 250px;
+}
+.alert{
+  margin: 20px auto;
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+#home{
+  margin-top: -20px;
+  width: 100%;
+  height: 1200px;
+  background: black;
+}
+.main_video{
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  position: fixed;
+  z-index: 1000;
+}
+.main_video video{
+
+  max-width: 100%;
+  max-height: auto;
+}
+section{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20000;
+  background: rgba(0, 0, 0, 0.5);
+}
+section p{
+  color: white;
+  text-align: right;
+  font-size: 2.6em;
+  margin-right: 30px;
+  font-style: bold;
+}
+section p:first-child{
+  margin-top: 60px;
+}
+.parrafo{
+  width: 100%;
+  height: 100%;
+
+}
+.right{
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.right:hover {
+  background: #007095;
+}
+.right:hover label {
+  color:white;
+}
+.right label{
+  color:black;
+}
+.breadcrumbs{
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+
+.js div#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: rgba(255, 255, 255, 0.8);;
+}
+.main_loader{
+    height: 100px;
+    width: 100px;
+    margin: 250px auto;
 }

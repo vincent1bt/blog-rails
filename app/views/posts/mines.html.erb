@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="main">
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <h3><%= link_to post.title, post %> </h3>
+
+       <p>
+         <% if post.user == current_user %>
+         <%= link_to "Borrar", post, method: :delete, data: { confirm: "Are you sure?" }, class: "data" %>
+
+         <%= link_to "Editar", post, method: :delete, data: { confirm: "Are you sure?" }, class: "data" %>  - Creado el <%= post.created_at.strftime("%b %d, %Y") %>
+        <% end %>
+
+       </p>
+
+        <hr>
+      <% end %>
+
+      <p>  <%= link_to "Nuevo", new_post_path %> </p>
+      <% else %>
+        <p>
+          No tienes articulos crea uno <%= link_to "Nuevo", new_post_path %>
+        </p>
+      <% end %>
+  </div>
+</div>

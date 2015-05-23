@@ -1,0 +1,14 @@
+
+<section id='home'>
+</section>
+
+<script type="text/javascript">
+
+var scene = new ScrollMagic.Scene({
+          triggerElement: "#home"
+        })
+        .setTween(".icon-bar", 0.5, {position: "fixed"}) // trigger a TweenMax.to tween
+        .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+        .addTo(controller);
+
+</script>

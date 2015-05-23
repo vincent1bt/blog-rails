@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="main_video">
+      <video src="assets/xal.MOV" autoplay loop>
+
+      </video>
+
+    </div>
+    <section>
+      <div class="parrafo">
+
+
+      <p>
+        Hola. Bienvenido a la pagina sobre eventos de Xalapa
+      </p>
+      <p>
+        Podras ver y compartir las cosas que pasan
+      </p>
+      <p>
+      <%= link_to(posts_path, class: 'button radius right') do %>
+        <label>Ver articulos</label>
+      <% end %>
+    </p>
+    <% unless current_user %>
+      <p>
+      <%= link_to(new_user_session_path, class: 'button radius right') do %>
+        <label>Inicia sesion</label>
+      <% end %>
+    </p>
+  <% end %>
+
+
+    </div>
+
+    </section>
+  </body>
+</html>

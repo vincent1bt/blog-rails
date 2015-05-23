@@ -12,33 +12,85 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
+    <div id="preloader">
+      <div class="main_loader">
+        <%= evil_icon 'ei-spinner-3', size: :l %>
+      </div>
+    </div>
     <%= evil_icons_sprite %>
+
+    <% if user_signed_in? %>
     <div class="icon-bar four-up">
+
       <div class="info">
         <p class="title">My blogers</p>
-        <p class="name">Bienvenido Vicente</p>
+
+        <p class="name">Bienvenido <%= current_user.name %></p>
+
       </div>
-  <a class="item">
+  <%= link_to(posts_path, class: 'item ') do %>
     <%= evil_icon 'ei-search', size: :m %>
     <label>Home</label>
-  </a>
-  <a class="item">
+  <% end %>
+
+  <%= link_to(mines_path, class: 'item ') do %>
     <%= evil_icon 'ei-archive', size: :m %>
     <label>Blogs</label>
-  </a>
-  <a class="item">
+  <% end %>
+
+  <%= link_to(edit_user_registration_path, class: 'item ') do %>
     <%= evil_icon 'ei-user', size: :m %>
     <label>Perfil</label>
-  </a>
-  <a class="item">
-    <%= evil_icon 'ei-close', size: :m %>
-    <label>Salir</label>
-  </a>
+  <% end %>
 
-</div
-    <%= yield %>
+    <%= link_to(destroy_user_session_path,method: :delete, class: 'item ') do %>
+      <%= evil_icon 'ei-close', size: :m %>
+      <label>Salir</label>
+    <% end %>
+  </div>
+  <% else %>
+  <div class="icon-bar two-up">
 
+    <div class="info">
+      <p class="title">My blogers</p>
+    </div>
+<%= link_to(posts_path, class: 'item ') do %>
+  <%= evil_icon 'ei-search', size: :m %>
+  <label>Home</label>
+<% end %>
+
+
+  <%= link_to(new_user_session_path, class: 'item ') do %>
+    <%= evil_icon 'ei-pointer', size: :m %>
+    <label>Entrar</label>
+  <% end %>
+</div>
+  <% end %>
+
+
+<% unless notice.nil? %>
+<div data-alert class="alert-box success radius notice">
+    <%= notice %> <%= evil_icon 'ei-check', size: :s %>
+    <a href="#" class="close">&times;</a>
+</div>
+<% end %>
+<% unless alert.nil? %>
+<div data-alert class="alert-box alert radius">
+    <%= alert %> <%= evil_icon 'ei-close-o', size: :s %>
+    <a href="#" class="close">&times;</a>
+</div>
+<% end %>
+
+      <%= yield %>
+
+
+
+    <ul class="breadcrumbs">
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li >Equipo 2</li>
+      <li >Panamericano 2015</li>
+    </ul>
   </body>
 </html>

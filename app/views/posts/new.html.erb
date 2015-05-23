@@ -1,0 +1,22 @@
+<div class="main_form">
+
+<%= form_for(@post)  do |f| %>
+<fieldset>
+  <legend>Titulo</legend>
+
+  <%= f.label :title, class: "form-control" do %>
+      <%= f.text_field :title, class: "form-control",placeholder: "Nombre del articulo" %>
+  <% end %>
+</fieldset>
+
+<fieldset>
+  <legend>Cuerpo</legend>
+
+  <%= f.label :body, class: "form-control" do %>
+      <%= f.text_area :body, class: "form-control",placeholder: "Cuerpo del articulo" %>
+  <% end %>
+</fieldset>
+  <%= f.submit "Crear", class: "button radius" %>
+<% end %>
+
+</div>

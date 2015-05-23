@@ -16,4 +16,18 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+//jQuery(document).ready(function($) {
+
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+//$(window).on('page:load',function(){
+//	$('#preloader').fadeOut('fast',function(){$(this).remove();});
+//});
+
+//});
+
+$(document).on('page:fetch', function() {
+  $("#preloader").show();
+});
+$(document).on('page:change', function() {
+  $("#preloader").hide();
+});

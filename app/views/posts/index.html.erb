@@ -1,0 +1,15 @@
+<div class="main">
+  <div class="main">
+      <% @posts.each do |post| %>
+        <h3><%= link_to post.title, post %> </h3>
+
+          Creado por <%= post.user.name %>   - el <%= post.created_at.strftime("%b %d, %Y") %>
+        <p>
+         <%= post.body[0..100] + "..." %> <%= link_to "Seguir leyendo", post %>
+       </p>
+        <hr>
+
+      <% end %>
+      <p>  <%= link_to "Nuevo", new_post_path %> </p>
+  </div>
+</div>

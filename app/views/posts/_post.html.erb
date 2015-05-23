@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="main">
+      <% @posts.each do |post| %>
+        <h3><%= link_to post.title, post %> </h3>
+
+        <p>
+         <%= post.body %>
+       </p>
+       <p>
+         <%= link_to "Borrar", @post, method: :delete, data: { confirm: "Are you sure?" }, class: "data" %>
+       </p>
+        <hr>
+      <% end %>

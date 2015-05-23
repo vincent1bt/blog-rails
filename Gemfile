@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #NUEVAS
 gem 'evil_icons'
 gem 'foundation-rails'
+gem 'devise'
 
 
 

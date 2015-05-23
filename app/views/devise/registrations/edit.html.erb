@@ -1,0 +1,62 @@
+<div class="main_form_session">
+<h2>Editar <%= current_user.name %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+    <legend>Nombre</legend>
+
+    <%= f.label :name do %>
+    <%= f.text_field :name, autofocus: true %>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Email</legend>
+
+    <%= f.label :email do %>
+    <%= f.email_field :email, autofocus: true %>
+    <% end %>
+  </fieldset>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <fieldset>
+    <legend>Contraseña</legend>
+
+    <%= f.label :password do %>
+    <i>(Dejalo en blanco si no quieres cambiarlo)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Repetir contraseña</legend>
+
+    <%= f.label :password_confirmation do %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contraseña actual</legend>
+    <%= f.label :current_password do %>
+    <i>(Necesitamos tu contraseña actual para hacer cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+    <% end %>
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit "Actualizar", class: "button radius"  %>
+  </div>
+<% end %>
+
+<h3>Cancelar cuenta</h3>
+
+<p>no te gusta? <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button radius alert" %></p>
+
+<%= link_to "Atras", :back %>
+
+</div>

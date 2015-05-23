@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="main">
+  <h3>  <%= @post.title%></h3>
+  Creado por <%= @post.user.name %>   - el <%= @post.created_at.strftime("%b %d, %Y") %>
+
+  <p>
+
+    <%= @post.body%>
+  </p>
+
+        <hr>
+      <%= link_to "Atras", posts_path %>
+  </div>
+</div>
