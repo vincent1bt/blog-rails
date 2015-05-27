@@ -1,0 +1,18 @@
+es:
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "No puede estar vacio"
+            body:
+              blank: "No puede estar vacio"
+              too_short: "No puede tener menos de 20  caracteres "
+              too_long: "No puede tener mas de 500 caracteres"
+        user:
+          attributes:
+            email:
+              blank: "No puede estar vacio"
+            password:
+              blank: "No puede estar vacio"

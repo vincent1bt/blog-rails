@@ -1,6 +1,15 @@
 <div class="main_form">
 
 <%= form_for(@post)  do |f| %>
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <fieldset>
   <legend>Titulo</legend>
 
@@ -16,6 +25,11 @@
       <%= f.text_area :body, class: "form-control",placeholder: "Cuerpo del articulo" %>
   <% end %>
 </fieldset>
+<fieldset>
+  <legend>Imagen(Opcional)</legend>
+  <%= f.file_field :picture %>
+</fieldset>
+
   <%= f.submit "Crear", class: "button radius" %>
 <% end %>
 

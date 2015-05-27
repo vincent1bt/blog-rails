@@ -18,9 +18,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  #def update
+  #  super
+  #end
+  #
 
   # DELETE /resource
   # def destroy
@@ -53,6 +54,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def after_sign_up_path_for(resource)
       posts_path
+   end
+
+   def after_update_path_for(resource)
+     current_user
    end
 
   # The path used after sign up for inactive accounts.

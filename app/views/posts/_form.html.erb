@@ -1,0 +1,23 @@
+<%= form_for([@post, @comment], remote: true, html: {id: "comments-form", :"data-type" => "json" }) do |f| %>
+<% if @comment.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<fieldset>
+  <legend>Titulo</legend>
+
+  <%= f.label :body, class: "form-control" do %>
+      <%= f.text_area :body, class: "form-control",placeholder: "Escribe tu comentario" %>
+  <% end %>
+</fieldset>
+
+<div class="actions">
+  <%= f.submit "Crear comentario", class: "button radius" %>
+</div>
+<% end %>

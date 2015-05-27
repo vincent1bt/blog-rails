@@ -41,12 +41,20 @@
   </fieldset>
 
   <fieldset>
+    <legend>Sube una foto</legend>
+    <%= f.file_field :avatar %>
+  </fieldset>
+
+
+
+  <fieldset>
     <legend>Contraseña actual</legend>
     <%= f.label :current_password do %>
     <i>(Necesitamos tu contraseña actual para hacer cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
     <% end %>
   </fieldset>
+
 
   <div class="actions">
     <%= f.submit "Actualizar", class: "button radius"  %>

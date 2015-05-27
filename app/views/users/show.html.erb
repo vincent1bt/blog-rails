@@ -1,0 +1,43 @@
+<div class="main_profile">
+<div class="about">
+  <div class="picture">
+    <% if @user.avatar_file_name %>
+
+          <%= image_tag @user.avatar.url(:medium) %>
+
+    <% else %>
+          <%= image_tag ('profile.png') %>
+
+    <% end %>
+  </div>
+  <h3>
+    <%= @user.name.capitalize %>
+    <% if current_user == @user %>
+      <%= link_to "Editar", edit_user_registration_path%>
+    <% end %>
+  </h3>
+  <p>
+    <%= @user.posts.count %> Articulos
+  </p>
+
+</div>
+
+<div class="posts_seccion">
+  <h3>Articulos de <%= @user.name.capitalize %></h3>
+  <% @user.posts.each do |post| %>
+      <div class="post">
+        <p class="created_at">
+          Creado el <%= post.created_at.strftime("%d %b, %Y") %>
+        </p>
+        <hr style="width:70%; margin: 0 auto;">
+      <p>
+          <%= link_to post.title.capitalize, post %>
+      </p>
+      </div>
+
+  <% end %>
+
+
+</div>
+
+</div>

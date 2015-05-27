@@ -1,14 +1,45 @@
 <div class="main">
   <div class="main">
   <h3>  <%= @post.title%></h3>
-  Creado por <%= @post.user.name %>   - el <%= @post.created_at.strftime("%b %d, %Y") %>
+  Creado por <%= link_to @post.user.name, @post.user  %> - el <%= @post.created_at.strftime("%d %b, %Y") %>
 
   <p>
 
     <%= @post.body%>
   </p>
 
+  <div class='likes'>
+    <%= evil_icon 'ei-chevron-up', size: :s %>
+    <%= @post.get_likes.size %>
+    <%= link_to "Me gusta", like_post_path(@post), method: :put %>
+    <%= evil_icon 'ei-chevron-down', size: :s %>
+    <%= @post.get_dislikes.size %>
+    <%= link_to "No me gusta", dislike_post_path(@post), method: :put %>
+  </div>
+  <% if @post.picture_file_name %>
+
+        <%= image_tag @post.picture.url(:large) %>
+
+  <% end %>
         <hr>
+        <h2>Comentarios</h2>
+        <ol id="comments-box">
+        <% @post.comments.each do |comment| %>
+        <div class="comment">
+          <div class="user_pic">
+
+          </div>
+          <p class="user_comment">
+
+            Comentario por <%= link_to comment.user.name,comment.user %>
+          </p>
+          <li> <p class="body_comment">
+           <%= comment.body %>
+         </p></li>
+         </div>
+        <% end %>
+      </ol>
+        <%= render "form" %>
       <%= link_to "Atras", posts_path %>
   </div>
 </div>

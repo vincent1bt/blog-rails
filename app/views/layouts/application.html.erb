@@ -24,22 +24,22 @@
     <div class="icon-bar four-up">
 
       <div class="info">
-        <p class="title">My blogers</p>
+        <p class="title">Xalapa</p>
 
         <p class="name">Bienvenido <%= current_user.name %></p>
 
       </div>
   <%= link_to(posts_path, class: 'item ') do %>
     <%= evil_icon 'ei-search', size: :m %>
-    <label>Home</label>
+    <label>Articulos</label>
   <% end %>
 
   <%= link_to(mines_path, class: 'item ') do %>
     <%= evil_icon 'ei-archive', size: :m %>
-    <label>Blogs</label>
+    <label>Mios</label>
   <% end %>
 
-  <%= link_to(edit_user_registration_path, class: 'item ') do %>
+  <%= link_to(current_user, class: 'item ') do %>
     <%= evil_icon 'ei-user', size: :m %>
     <label>Perfil</label>
   <% end %>
@@ -53,11 +53,11 @@
   <div class="icon-bar two-up">
 
     <div class="info">
-      <p class="title">My blogers</p>
+      <p class="title">Xalapa</p>
     </div>
 <%= link_to(posts_path, class: 'item ') do %>
   <%= evil_icon 'ei-search', size: :m %>
-  <label>Home</label>
+  <label>Articulos</label>
 <% end %>
 
 
@@ -89,7 +89,7 @@
     <ul class="breadcrumbs">
       <li><a href="#">Twitter</a></li>
       <li><a href="#">Facebook</a></li>
-      <li >Equipo 2</li>
+      <li >Equipo(Lorna Foglia, Vicente Rodriguez)</li>
       <li >Panamericano 2015</li>
     </ul>
   </body>
