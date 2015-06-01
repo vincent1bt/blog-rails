@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: vincent1bt
+  api_key: '988781884774889'
+  api_secret: HpgBqnW7qc-FGHO-e_FzNFXF56A
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: vincent1bt
+  api_key: '988781884774889'
+  api_secret: HpgBqnW7qc-FGHO-e_FzNFXF56A
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: vincent1bt
+  api_key: '988781884774889'
+  api_secret: HpgBqnW7qc-FGHO-e_FzNFXF56A
+  enhance_image_tag: true
+  static_image_support: false

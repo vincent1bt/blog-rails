@@ -30,7 +30,8 @@ gem 'foundation-rails'
 gem 'devise'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'acts_as_votable', '~> 0.10.0'
-
+gem 'cloudinary'
+gem 'activeadmin', github: 'activeadmin'
 
 
 
